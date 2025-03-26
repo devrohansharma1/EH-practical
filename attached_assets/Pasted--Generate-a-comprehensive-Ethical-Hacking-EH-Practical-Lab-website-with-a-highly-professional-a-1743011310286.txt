@@ -1,0 +1,58 @@
+
+
+Generate a comprehensive Ethical Hacking (EH) Practical Lab website with a highly professional and modern user interface. The website should be designed as if it is being developed for a reputed cybersecurity organization, incorporating a clean, structured, and intuitive navigation system. The user interface should be highly responsive, featuring an enterprise-level design with a focus on usability, accessibility, and efficiency.  
+
+### Practical List:  
+
+1. Reconnaissance using Google and Whois  
+- Explain Google Dorking techniques for extracting sensitive information.  
+- Provide a step-by-step guide on using Whois for domain intelligence gathering.  
+- Include CLI commands with explanations.  
+
+2. Encrypt and Decrypt Passwords using CrypTool  
+- Detailed guide on installing and using CrypTool.  
+- Demonstrate password encryption and decryption using different cryptographic algorithms.  
+
+3. Windows Command Analysis (ifconfig, ping, netstat, traceroute)  
+- Explain the purpose and real-world application of each command.  
+- Provide expected outputs and detailed analysis.  
+- Include an interactive terminal for testing commands.  
+
+4. Develop a Keylogger in Python  
+- Explanation of keyloggers and their working principles.  
+- Provide fully functional and copyable Python code.  
+- Discuss ethical concerns and legal implications.  
+
+5. Detect Scanned Networks and Retrieve Their Profiles using CLI Script  
+- Explain network scanning methodologies.  
+- Provide a custom script to detect scanned networks and extract profiles.  
+- Ensure formatted and easy-to-understand output.  
+
+6. Execute a Denial-of-Service (DoS) Attack using a Batch File  
+- Explain DoS attacks, their execution, and impact.  
+- Provide a well-documented batch script for demonstration.  
+- Include preventive measures against DoS attacks.  
+
+7. Capture and Analyze Network Traffic using Wireshark  
+- Step-by-step guide on installing and using Wireshark.  
+- Explain packet capturing, filtering, and protocol analysis.  
+- Provide real-world examples with screenshots.  
+
+8. Cross-Site Scripting (XSS) Attacks using DVWA  
+- Detailed instructions on setting up Damn Vulnerable Web App (DVWA).  
+- Walkthrough of reflected XSS (non-persistent) attacks.  
+- Walkthrough of stored XSS (persistent) attacks.  
+- Provide best practices for mitigating XSS vulnerabilities.  
+
+### Features to Include in the Website:  
+
+- Step-by-step guides for each practical  
+- Copyable code snippets with syntax highlighting  
+- Real-time code execution interface where applicable  
+- Downloadable scripts for practical implementation  
+- Advanced search functionality for easy content access  
+- Professionally designed dark mode support  
+- Well-structured categories and intuitive layout  
+- Secure authentication and user role management for restricted access  
+
+This website should be developed with a strong focus on user experience, incorporating best practices from industry-leading cybersecurity labs. The interface should reflect a high level of expertise, ensuring that users can seamlessly navigate, execute, and understand each practical with clarity and precision.
