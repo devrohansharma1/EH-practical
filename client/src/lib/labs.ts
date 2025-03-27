@@ -1136,7 +1136,7 @@ with Listener(on_press=log_keystroke) as listener:
         ]
       }
     ]
-}
+},
 
   {
     id: 'dos-attack',
