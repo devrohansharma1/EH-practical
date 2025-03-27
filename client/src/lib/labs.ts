@@ -1055,24 +1055,89 @@ with Listener(on_press=log_keystroke) as listener:
     ]
   },
   {
-    id: 'network-scanning',
-    number: 5,
-    title: 'Detect Scanned Networks and Retrieve Their Profiles using CLI Script',
-    shortTitle: 'Network Scanning',
-    icon: 'ri-wifi-line',
-    duration: 'Approximately 3 hours',
-    difficulty: 'Intermediate',
-    tools: 'Python, Command Line, Network Adapter',
-    description: 'Learn how to create and use scripts to detect nearby wireless networks and extract their information. This lab focuses on network discovery techniques that are essential for security assessments.',
-    sections: [
+    "id": "network-scanning",
+    "number": 5,
+    "title": "Detect Scanned Networks and Retrieve Their Profiles using CLI Script",
+    "shortTitle": "Network Scanning",
+    "icon": "ri-wifi-line",
+    "duration": "Approximately 3 hours",
+    "difficulty": "Intermediate",
+    "tools": "Windows Command Prompt, PowerShell, Network Adapter",
+    "description": "Learn how to use command-line tools to scan for available wireless networks, extract their profiles, and analyze the results for security assessments.",
+    "sections": [
       {
-        id: 'overview',
-        title: 'Overview',
-        content: 'Network scanning is an essential skill for security professionals to identify active systems and services on a network. In this lab, we\'ll develop a script to detect and analyze wireless networks.',
-        subsections: []
+        "id": "overview",
+        "title": "Overview",
+        "content": "Network scanning is an essential skill for security professionals to identify active networks and analyze their configurations. This lab will demonstrate how to detect nearby wireless networks using Windows command-line tools and retrieve their profiles for security assessment.",
+        "subsections": [
+          {
+            "title": "Understanding Network Scanning",
+            "content": "Network scanning involves detecting available networks, retrieving their properties, and analyzing configurations such as SSID, security type, and signal strength. This is useful for assessing security risks and identifying potential vulnerabilities."
+          },
+          {
+            "title": "Learning Objectives",
+            "content": "In this lab, you will:",
+            "steps": [
+              { "title": "List Available Wireless Networks", "content": "Use Windows commands to display all detected Wi-Fi networks." },
+              { "title": "Retrieve Saved Network Profiles", "content": "Access and extract stored network credentials and settings." },
+              { "title": "Analyze Network Security", "content": "Assess security parameters like encryption type and authentication methods." }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "command-line-scanning",
+        "title": "Executing a Command Line Script for Network Scanning",
+        "content": "In this section, we will execute a Windows command-line script to scan for available networks and retrieve their details.",
+        "subsections": [
+          {
+            "title": "Basic Wi-Fi Network Scan",
+            "content": "Run the following command in Command Prompt to list all detected networks:",
+            "code": "netsh wlan show networks mode=bssid",
+            "language": "batch"
+          },
+          {
+            "title": "Retrieving Saved Network Profiles",
+            "content": "To retrieve profiles of previously connected networks, use:",
+            "code": "netsh wlan show profiles",
+            "language": "batch"
+          },
+          {
+            "title": "Extracting Network Security Details",
+            "content": "To display detailed security settings of a saved network, replace 'WiFiName' with the actual SSID of the network:",
+            "code": "netsh wlan show profile name=\"WiFiName\" key=clear",
+            "language": "batch"
+          },
+          {
+            "title": "Script for Automated Scanning",
+            "content": "Below is a simple batch script to automate network scanning and save results to a text file:",
+            "code": "@echo off\nnetsh wlan show networks mode=bssid > networks.txt\nnetsh wlan show profiles > profiles.txt\necho Network scan completed! Results saved.",
+            "language": "batch"
+          }
+        ]
+      },
+      {
+        "id": "analyzing-results",
+        "title": "Analyzing and Interpreting Scan Results",
+        "content": "Understanding the output of these commands is essential for security assessments.",
+        "subsections": [
+          {
+            "title": "Network Visibility",
+            "content": "The 'show networks' command lists all visible SSIDs along with their security settings, indicating potential risks of open networks."
+          },
+          {
+            "title": "Security Assessment",
+            "content": "The 'show profile' command can expose stored Wi-Fi credentials, highlighting the importance of securing stored network profiles."
+          },
+          {
+            "title": "Encryption and Authentication",
+            "content": "Identifying networks using outdated encryption (e.g., WEP) helps assess security weaknesses in a given environment."
+          }
+        ]
       }
     ]
-  },
+}
+
   {
     id: 'dos-attack',
     number: 6,
